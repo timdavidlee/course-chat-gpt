@@ -2,3 +2,5 @@ torchvision
 jupyterlab
 pandas
 numpy
+sentencepiece
+tiktoken
