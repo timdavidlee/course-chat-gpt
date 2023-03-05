@@ -4,3 +4,4 @@ pandas
 numpy
 sentencepiece
 tiktoken
+tqdm

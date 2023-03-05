@@ -14,11 +14,16 @@ class BigramLanguageModel(nn.Module):
         super().__init__()
         
         # vocab size square this is almost like attention
+        # should note this is considered to be row-wise
         self.token_embedding_table = nn.Embedding(vocab_size, vocab_size)
 
-    def forward(self, idx, targets = None):
+    def forward(self, idx, targets  = None):
+        # Batch | Time | Channel
+        # batch=4, time=8, channel is vocab size=65
         logits = self.token_embedding_table(idx) # (B, T, C)
         
+        # logits = scores of what will be next in a sequence
+
         # batch, target, channels
         B, T, C = logits.shape
         if targets is None:
