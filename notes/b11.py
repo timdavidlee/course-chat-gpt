@@ -27,7 +27,7 @@ class HeadV1(nn.Module):
         # this is a buffer, assigning to module
         self.register_buffer(
             "tril",
-            torch.tril(torch.ones(block_size, block_size))
+            torch.tril(torch.ones(block_size, block_size).to(device))
         )
         self.dropout = nn.Dropout(dropout)
 
@@ -83,7 +83,7 @@ class MultiHeadAttentionV1(nn.Module):
 
 
 class AttnFFBlockV1(nn.Module):
-    def __init__(self, n_emb: int, n_head: int, block_size: int, dropout: float):
+    def __init__(self, n_emb: int, n_head: int, block_size: int, dropout: float, device: str):
         super().__init__()
         head_size = n_emb // n_head
         self.sa = MultiHeadAttentionV1(
@@ -91,7 +91,8 @@ class AttnFFBlockV1(nn.Module):
             n_emb,
             head_size,
             block_size,
-            dropout
+            dropout,
+            device=device
         )
         self.ffwd = FeedForward(n_emb)
         self.ln1 = nn.LayerNorm(n_emb)  # adding layer norm, has trainable
@@ -123,9 +124,9 @@ class BigramAttentionLanguageModelV4(nn.Module):
         # encoding where the character is in the overall
         self.position_embedding_table = nn.Embedding(block_size, n_emb)
         self.blocks = nn.Sequential(
-            AttnFFBlockV1(n_emb, n_head=4, block_size=block_size, dropout=dropout),
-            AttnFFBlockV1(n_emb, n_head=4, block_size=block_size, dropout=dropout),
-            AttnFFBlockV1(n_emb, n_head=4, block_size=block_size, dropout=dropout),
+            AttnFFBlockV1(n_emb, n_head=4, block_size=block_size, dropout=dropout, device=device),
+            AttnFFBlockV1(n_emb, n_head=4, block_size=block_size, dropout=dropout, device=device),
+            AttnFFBlockV1(n_emb, n_head=4, block_size=block_size, dropout=dropout, device=device),
             nn.LayerNorm(n_emb)
         )
         self.lm_head = nn.Linear(n_emb, vocab_size)
@@ -136,7 +137,7 @@ class BigramAttentionLanguageModelV4(nn.Module):
         # get the token embedding
         token_emb = self.token_embedding_table(idx) # (B, T, C)
         # get the position embedding
-        pos_emb = self.position_embedding_table(torch.arange(T, device=self.device))
+        pos_emb = self.position_embedding_table(torch.arange(T).to(self.device))
         x = token_emb + pos_emb
         x = self.blocks(x)
         logits = self.lm_head(x)  # (B, T, vocab_size)

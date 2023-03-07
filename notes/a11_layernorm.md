@@ -92,3 +92,32 @@ Takes neural network, drops out certain weights so the model will not memorize t
 
 ```
 ```
+
+
+## Note that the training at this point will be SIGNIFICANTLY SLOWER
+
+- There's a slow startup time (it will hang)
+- Then afterwards, i swapped to a GPU to do the training
+
+Here's the output after predicting:
+
+```
+KING RICHARD II:
+Shall be stir a senators again:
+Brief Mercutio
+My arm that us all to become as a funward,
+And follow me to heaven from the heart more.
+You, beg it end, I heard it to move thee.
+
+WARWICK:
+Ay, just, leave you well us wonder yourself.
+
+KING HENRY VI:
+He came at last your mistress than
+And your white is your maids, and hie my means,--
+
+KING RICHARD III:
+From your present! my lord, I leave,
+Your Prince, Signio; I speak too, is a royal thing:
+For this county, and your battle may lose
+```

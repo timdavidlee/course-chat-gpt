@@ -98,3 +98,26 @@ class FeedForward(nn.Module):
     def forward(self, x):
         return self.net(x)
 ```
+
+Here's a sample of the output after applying the above
+
+```
+ANGABELLA:
+O, will to layes that the buber and Sayrn'd the gatanss:
+Waith full his vety cretlessay, arched you, not to zokno,
+Yout Frtofuis her, thil; dill, and is ensen cin latist in overs, and the now theer bourel lind teal.
+-hurr cour by pray; and plawty.
+
+KING HINGBROK:
+Alaves;
+Pot you, thee akend Wicke whroneriby, the modour was in hime stison of his but that nunture fir tre;
+The muftt tey ale oftates darred my of.
+
+HENNNIV:
+Kered is:
+Sadate the age staidinens.
+
+DUKA:
+So re to-chan you!
+My
+```
