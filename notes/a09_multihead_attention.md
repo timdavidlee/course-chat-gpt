@@ -31,3 +31,29 @@ class FeedForward(nn.Module):
     def forward(self, x):
         return self.net(x)
 ```
+
+Sample generative output
+
+```
+And ther thidcow and is and the airen bobe to: anvirtand me?
+I ands ar hiphe us hat vet?
+F dilth ane aw crup and not com onour
+Yowns
+Moof is her!
+Amil;
+And buaes ifee-sen cin lat Heriviov the and Wing.
+
+DWAFNWIO:
+Wel lind teall thus wonchiry:
+Aur Maiss hawty.
+
+KIBEUSIR:
+I patelives
+Mom
+my wod mothake on indo wher eiicks withe dourive wies ime st so mower; the the danderupt for ar igis! muf thin inled
+Atatfif Pried my of.
+
+HINY IER:
+Widby ake adsal ther ghe thidin cour ay andy Iry to chan the!
+Ay
+```

@@ -1,10 +1,10 @@
-"""python -m notes.b08b_train --gpu"""
+"""python -m notes.b09b_train --gpu"""
 import torch
 
 from tqdm import tqdm
 
 from .b01 import make_encoder_and_decoder, make_train_valid_data, load_input_text, estimate_loss, get_batch
-from .b08 import BigramAttentionLanguageModelV1
+from .b09 import BigramAttentionLanguageModelV2
 from .util import make_arg_parser, print_banner
 
 
@@ -25,7 +25,7 @@ def main(use_gpu: bool):
     encoder, decoder = make_encoder_and_decoder(chars)
     train_data, valid_data = make_train_valid_data(text, encoder)
 
-    m = BigramAttentionLanguageModelV1(vocab_size, n_emb=n_emb, block_size=block_size, device=device)
+    m = BigramAttentionLanguageModelV2(vocab_size, n_emb=n_emb, block_size=block_size, device=device)
     m = m.to(device)
 
     optimizer = torch.optim.Adam(m.parameters(), lr=learning_rate)

@@ -68,8 +68,8 @@ class BigramAttentionLanguageModelV2(nn.Module):
         # get the position embedding
         pos_emb = self.position_embedding_table(torch.arange(T, device=self.device))
         x = token_emb + pos_emb
-        x = self.sa_head(x)  # apply one head of self-attention
-        x = self.ffwd_head(x)
+        x = self.sa_heads(x)  # apply one head of self-attention
+        x = self.ffwd(x)
         logits = self.lm_head(x)  # (B, T, vocab_size)
         
         # logits = scores of what will be next in a sequence

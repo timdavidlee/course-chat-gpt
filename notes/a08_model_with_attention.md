@@ -128,9 +128,26 @@ output = my_data_utils.decode(predicted_token_ids)
 print("[trained model output]: {}".format(output))
 ```
 
+```sh
+python -m notes.b08b_train --gpu
+```
 
 ```
-[untrained model output]: 
-Before we wo wo pceeedceed any furuceed any furuceed any furu wp prwwo wrre wp pprwo wrrcee Ctizen:
-Before we proceed any furuceed any furuceed any furuceed any furuceed any furuceed any furuceed any furuceed any furuceed any furuceed any furuceed any furuceed any furuceed any furuceed any furuceed 
+When bef bridcowr, har on, ble
+
+Hiset bube dienavegr-ans mealatanss:
+Want he uw hathe.
+War dilasoate awice my.
+
+Hastaru zorou tabuts, tof is hy me mil; dill, aes iree sen cin lat Herid ovets, and Win ngar iserans!
+el lind peal.
+-hul wonchiry ptupr aiss hew ye wllinde norod atelaves
+Momy ys, dl tthake on indo whe Ceiiby, wisti dourive wees ime st so mowrixs bure kad nterupt f so;
+ARID Wam:
+EN CI inle ont ffaf Pre?
+
+Wh om.
+
+He-fu a!
+Atied isar adsal the Eand thinin cour ay aney Iry ts I fr yo ves,
 ```
