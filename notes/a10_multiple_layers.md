@@ -102,22 +102,39 @@ class FeedForward(nn.Module):
 Here's a sample of the output after applying the above
 
 ```
-ANGABELLA:
-O, will to layes that the buber and Sayrn'd the gatanss:
-Waith full his vety cretlessay, arched you, not to zokno,
-Yout Frtofuis her, thil; dill, and is ensen cin latist in overs, and the now theer bourel lind teal.
--hurr cour by pray; and plawty.
+total runtime: 0:01:56.509885
+================================================================================
+Generative Output!
+================================================================================
 
-KING HINGBROK:
-Alaves;
-Pot you, thee akend Wicke whroneriby, the modour was in hime stison of his but that nunture fir tre;
-The muftt tey ale oftates darred my of.
+WARCIO:
+Roricch.
 
-HENNNIV:
-Kered is:
-Sadate the age staidinens.
+SOROLOLE:
+AUn a sel bube to take O--
+Sere?
 
-DUKA:
-So re to-chan you!
-My
+Tause:
+Warth fuur crown.
+Whre that a endwick, you, not to zurm he ourservefuin her than well
+Whines is enten cintlatise, drove the dener there is wacs!
+ lilind than.
+-huld cuch by prave aiss hinty.
+
+KING HI mandpere a dest my liked mothad
+To Wichon her evicks the most rive ches,
+We sto-LARGANGELO:
+Thake my cructed so;
+And hine:
+Edward.
+
+PUENTIZ:
+Firse?
+
+KIS
+Betrang, be!
+
+HOMPEY:
+
+SadUpl the Eursend uin cour aar tey ir-prave from clocy
 ```

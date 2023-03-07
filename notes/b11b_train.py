@@ -1,6 +1,8 @@
 """python -m notes.b11b_train --gpu"""
 
 import torch
+
+from datetime import datetime
 from tqdm import tqdm
 
 from .b01 import make_encoder_and_decoder, make_train_valid_data, load_input_text, estimate_loss, get_batch
@@ -39,19 +41,29 @@ def main(use_gpu: bool):
         print_banner("model is on cuda!")
 
     optimizer = torch.optim.Adam(m.parameters(), lr=learning_rate)
-
+    global_start = datetime.now()
+    checkin_start = datetime.now()
     for iter in tqdm(range(max_iters)):
         if iter % eval_iters == 0 or iter == max_iters - 1:
+            total_time = datetime.now() - global_start
+            checkin_time = datetime.now() - checkin_start
             train_loss = estimate_loss(m, train_data, eval_iters, batch_size, block_size, device=device)
             valid_loss = estimate_loss(m, valid_data, eval_iters, batch_size, block_size, device=device)
-            print("iter: {:,}\t| train_loss: {:.04f}\t| valid_loss: {:.04f}".format(iter, train_loss, valid_loss))
-
+            print("iter: {:,}\t| train_loss: {:.04f}\t| valid_loss: {:.04f} cycle: {} total_time: {}".format(
+                iter, train_loss, valid_loss, checkin_time, total_time, 
+            ))
+            checkin_start = datetime.now()
+    
         xb, yb = get_batch(train_data, block_size, batch_size, device=device)
 
         _, loss = m(xb, yb)
         optimizer.zero_grad(set_to_none=True)
         loss.backward()
         optimizer.step()
+
+    total_time = datetime.now() - global_start
+    print("total runtime: {}".format(total_time))
+    print_banner("Generative Output!")
 
     context = torch.zeros((1, 1), dtype=torch.long, device=device)
     print(decoder(m.generate(context, max_new_tokens=500)[0].tolist()))

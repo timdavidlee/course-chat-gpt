@@ -102,6 +102,12 @@ Takes neural network, drops out certain weights so the model will not memorize t
 Here's the output after predicting:
 
 ```
+total runtime: 0:07:49.969858
+================================================================================
+Generative Output!
+================================================================================
+
+
 KING RICHARD II:
 Shall be stir a senators again:
 Brief Mercutio
