@@ -5,3 +5,5 @@ numpy
 sentencepiece
 tiktoken
 tqdm
+ipython
+bpython
