@@ -1,0 +1,41 @@
+repo_name: course-chat-gpt
+site_name: Chat GPT Notes
+docs_dir: notes
+theme:
+  name: material
+  font:
+    code: Source Code Pro
+  features:
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - search.share
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    - toc.integrate
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+plugins:
+  - search
+
+nav:
+ - Home: a01_intro.md
+ - Text: a02_text.md
+ - Dataloaders: a03_dataloaders.md
+ - First Model: a04_first_model.md
+ - First Improvement: a05_first_improvement.md
+ - Upgrading: a06_upgrading_the_model.md
+ - Position Embedding: a07_position_embedding.md
+ - Model with Attention: a08_model_with_attention.md
+ - Multi-Head Attention: a09_multihead_attention.md
+ - Multiple Layers: a10_multiple_layers.md
+ - Layer Norm: a11_layernorm.md
+ - Preparing for more layers: a12_optimized.md
+ - Encoder + Decoder Networks: a13_encoder_decoder.md

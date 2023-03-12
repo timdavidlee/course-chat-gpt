@@ -158,18 +158,34 @@ output = my_data_utils.decode(predicted_token_ids)
 print("[untrained model output]: {}".format(output))
 ```
 
+## Sample Generative Output
 
-```python
-[untrained model output]: 
-Bed an:
-Npre an:
-Bee we any prororororgBeny we pwefured wefoce Cit any we we any any prstitize prororoceny any proceny Citire proceGPPPPPTZhy Cizen:
-Be Cize Cize an:
-Be wed furoreeed we an:
-Be Cit forstZpred ween:
-Be any any foce Cizen:
-Be fororst prorstize weeforst Firoree foce wen:
-Ben:
-Beny wed f
+```
+================================================================================
+Generative Output!
+================================================================================
+
+WI
+IO IN:
+mine hsthed fal,PXoue.qKLlefot ven!
+Ahes D gutse d tenthangowiownn d t h.
+I
+ANoushappor:
+S:
+The UDY uer, ssS:
+' tove:
+
+ThPS: t! s:
+myou sthe gh, INCLTIGw wo cim.'s;cum Qmatland t th yourathayeBul;
+NTh:
+TLI hantin teateer ine she d or ale ELecedist tofol.cowous, areay!CLExcMangNT: answehe womosour me,
+Tount:
+ZERieatr a coBy!BE?
+KI porngile o ctis u othQUJ3in,
+Prel he;dre.
+Tem'stowo n'YFUC&ZIUWBy , LI thendsGZw; blqTMod a inr?
+WhEE nchlos fjeen thisof
+Qthe l?
+Ar ceYoS! CH-e soAUR:f abHes
 ```
 

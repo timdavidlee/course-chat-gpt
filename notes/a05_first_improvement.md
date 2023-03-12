@@ -1,6 +1,7 @@
 # First improvement: Using History
 
-First a diagnosis:
+## Diagnosis: only looking at the last character
+
 - one of the reasons the generative model is doing so poorly is it is only looking at the last character (single) to do the prediction. Note the following:
 
 ```python
@@ -39,7 +40,7 @@ A-B-C-D-[E]-F-G
 Our prediction slot should NOT know the future, in this case `F` and `G`.
 
 
-### Average the history
+### Averaging the history
 
 What is the easiest way for tokens to communicate to each other?
 
@@ -101,6 +102,8 @@ tensor([[[0., 2.],
          [1., 1.],
          [2., 1.]]])
 ```
+
+### How to calculate the average at different timesteps
 
 Now consider a small inefficient loop to calculate the mean(s):
 
@@ -184,7 +187,7 @@ tensor([[[0.0000, 2.0000],
          [1.2500, 1.1250]],
 ```
 
-## About efficiency
+## Making the calculation more efficient
 
 As shown by the above, the loop is very inefficient, lets try and fix this with matrix multiplication
 
@@ -211,7 +214,6 @@ c=tensor([[14., 16.],
         [14., 16.]])
 ```
 
-
 Note that the differing dimensions of what is being multiplied:
 
 ```
@@ -225,7 +227,7 @@ And this is out the math works
 16 = 7 x 1 + 4 x 1 + 5 x 1
 ```
 
-# lets a different pattern instead of all ones
+## Using `tril` or `lower triangle`
 
 This time we will us the `lower triangle` function or `tril` to get the following:
 
@@ -255,7 +257,7 @@ The first row is simply a copy, the second row is a rolling sum
 11 = 7 + 4
 ```
 
-## Converting the above into averages
+### Using `lower triangle` to calculate averages
 
 ```python
 a = torch.tril(torch.ones(3, 3))

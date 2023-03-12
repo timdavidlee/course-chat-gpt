@@ -1,3 +1,7 @@
+# Text Basics
+
+How a machine understands text
+
 ### Requirements
 
 - `pytorch`
@@ -12,11 +16,13 @@ There's a google colab that can be used as reference: [Colab Link](https://www.y
 
 ### Get the data
 
-```
+```sh
 !wget https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
 ```
 
 ### Opening the data
+
+Open the text file as a really long single string variable
 
 ```python
 def read_in_shakespear_data(file: str) -> str:
@@ -205,7 +211,7 @@ Random:
 - the vocabulary is a LOT larger
 
 
-## Lets Tokenize the entire dataset:
+## Tokenize the entire dataset:
 
 ```python
 import torch
@@ -247,7 +253,7 @@ Will split our long sequence into train + val.
 `train` will be what the model sees
 `valid` will be what is used to see how the model does on new material.
 
-The ratio can depend on the size, but 80/20 is pretty common for smaller datasets.
+The ratio can depend on the size, but `80 / 20` or `90 / 10` is pretty common for smaller datasets.
 
 ```python
 train_cutoff = int(0.9 * len(token_ids))

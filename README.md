@@ -1,5 +1,6 @@
 # course-chat-gpt
-notes + materials from regarding chat gpt
+
+Notes + materials from regarding `chat GPT`. Check the `mkdocs` hosted website here: [https://timdavidlee.github.io/course-chat-gpt/](https://timdavidlee.github.io/course-chat-gpt/)
 
 
 ## Setting up the python environment locally
